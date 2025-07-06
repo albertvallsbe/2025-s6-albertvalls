@@ -1,25 +1,18 @@
-export type TutorialStep = {
+export type ItemCard = {
+	id: number;
 	title: string;
 	description: string;
-	bgColor?: string;
-	// image?: string;
+	price: number;
 };
 
 export type NavigationControls = {
-	stepIndex: number;
-	currentStep: TutorialStep;
-	totalSteps: number;
-	isFirst: boolean;
-	isLast: boolean;
-	next: () => void;
-	prev: () => void;
-	goTo: (index: number) => void;
-	direction: 'next' | 'prev';
+	checked: boolean;
+	onToggle: (id: number, checked: boolean) => void;
 };
 
 export type CardProps = {
-	card: TutorialStep;
-	controls: NavigationControls;
+	card: ItemCard;
+	controls?: NavigationControls;
 };
 
 export type ImageProps = {
