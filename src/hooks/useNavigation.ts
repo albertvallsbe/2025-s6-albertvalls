@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
-import type { TutorialStep, NavigationControls } from "../types/types";
+import type { ItemCard, NavigationControls } from "../types/types";
 
 export const useNavigation = (
-	steps: TutorialStep[]
+	steps: ItemCard[]
 ): NavigationControls & { direction: "next" | "prev" } => {
 	const [stepIndex, setStepIndex] = useState<number>(0);
 	const prevIndexRef = useRef<number>(0);

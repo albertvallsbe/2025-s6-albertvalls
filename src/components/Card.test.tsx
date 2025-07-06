@@ -1,9 +1,9 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Card } from './Card';
-import type { NavigationControls, TutorialStep } from '../types/types';
+import type { NavigationControls, ItemCard } from '../types/types';
 
 describe('Card component on initial step', () => {
-	const stepData: TutorialStep = {
+	const stepData: ItemCard = {
 		title: 'Pas de prova',
 		description: 'Descripció de prova',
 	};
