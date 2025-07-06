@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Dedica moltes hores",
+        "description": "Un mínim de 30 hores a la setmana. Si no en tens prou, hauràs de dedicar-li més hores. Al principi sembla impossible, però notaràs una millora ràpidament.",
+        "bgColor": "#38A39C"
+    },
+    {
+        "title": "Programa projectes propis 2",
+        "description": "Més val 10 hores treballant en projectes propis, que 10 hores mirant tutorials. La motivació i la implicació en el projecte ajudarà a accelerar el teu aprenentatge.",
+        "bgColor": "#D1D2D7"
+    },
+    {
+        "title": "Procura descansar 3",
+        "description": "Descansar bé i desconnectar són vitals. D'aquesta manera reduiràs l'estrès i l'ansietat. Milloraràs la teva concentració i consolidaràs el teu aprenentatge.",
+        "bgColor": "#FFD15C"
+    },
+    {
+        "title": "Dedica moltes hores 4",
+        "description": "Un mínim de 30 hores a la setmana. Si no en tens prou, hauràs de dedicar-li més hores. Al principi sembla impossible, però notaràs una millora ràpidament.",
+        "bgColor": "#39C38A"
+    },
+    {
+        "title": "Programa projectes propis 5",
+        "description": "Més val 10 hores treballant en projectes propis, que 10 hores mirant tutorials. La motivació i la implicació en el projecte ajudarà a accelerar el teu aprenentatge.",
+        "bgColor": "#2D7D1D"
+    },
+    {
+        "title": "Procura descansar 6",
+        "description": "Descansar bé i desconnectar són vitals. D'aquesta manera reduiràs l'estrès i l'ansietat. Milloraràs la teva concentració i consolidaràs el teu aprenentatge.",
+        "bgColor": "#15CFFD"
+    }
+]
