@@ -27,7 +27,6 @@ body {
 	grid-template-rows: 1fr;
 }
 
-
 .card__item {
 	padding: 1rem;
 }
@@ -36,7 +35,6 @@ body {
 	padding: 1rem;
 	display: grid;
 	grid-template-columns: repeat(2, auto);
-	// grid-template-rows: 1fr;
 	gap: 1rem;
 	align-items: center;
 }
@@ -68,7 +66,6 @@ body {
 	margin-right: 8rem;
 }
 
-
 input[type="checkbox"] {
 	width: 1rem;
 	height: 1rem;
@@ -85,16 +82,13 @@ input[type="checkbox"] {
 		gap: 0;
 	}
 
-
 	.card__section {
 		grid-template-rows: 1fr;
 		grid-template-columns: repeat(2, auto);
-
 	}
 
 	.card__item {
 		padding: 1rem;
-
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(2, auto);
 	}
