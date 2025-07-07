@@ -8,23 +8,23 @@ export const Card = ({
 }: CardProps): JSX.Element => {
 	const { checked = false, onToggle = () => {} } = controls ?? {};
 
-	const {
-		pages = 1,
-		languages = 1,
-		onChangePages,
-		onChangeLanguages,
-	} = webOptionsProps ?? {};
-
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		onToggle(card.id, event.target.checked);
-		console.log("card: ", card.id);
-		console.log("check: ", event.target.checked);
 	};
 
 	const isWebCard = card.id === 3;
 
+	const {
+		webPages = 1,
+		webLanguages = 1,
+		onIncrementPages = () => {},
+		onDecrementPages = () => {},
+		onIncrementLanguages = () => {},
+		onDecrementLanguages = () => {},
+	} = webOptionsProps ?? {};
+
 	return (
-		<article key={card.id} className={`card`}>
+		<article className={`card`}>
 			<div className="card__item">
 				<h2 className="card__title">{card.title}</h2>
 				<p className="card__text">{card.description}</p>
@@ -43,12 +43,14 @@ export const Card = ({
 					<p className="card__text">Afegir</p>
 				</div>
 			</div>
-			{isWebCard && onChangePages && onChangeLanguages && (
+			{isWebCard && (
 				<WebOptions
-					pages={pages}
-					languages={languages}
-					onChangePages={onChangePages}
-					onChangeLanguages={onChangeLanguages}
+					webPages={webPages}
+					webLanguages={webLanguages}
+					onIncrementPages={onIncrementPages}
+					onDecrementPages={onDecrementPages}
+					onIncrementLanguages={onIncrementLanguages}
+					onDecrementLanguages={onDecrementLanguages}
 				/>
 			)}
 		</article>

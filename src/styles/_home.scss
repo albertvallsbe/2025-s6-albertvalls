@@ -62,7 +62,7 @@ body {
 }
 
 .total__budget {
-	width: 22rem;
+	width: 25rem;
 	margin: 2rem auto;
 	font-size: 2rem;
 	color: #555;
@@ -76,6 +76,19 @@ input[type="checkbox"] {
 	height: 1rem;
 	accent-color: colors.$primary-color;
 	cursor: pointer;
+}
+
+input[type="number"] {
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	& {
+		-moz-appearance: textfield;
+	}
 }
 
 @media (min-width: 768px) {

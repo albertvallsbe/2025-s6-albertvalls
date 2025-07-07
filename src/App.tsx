@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import type { ItemCard } from "./types/types";
+import { useOptionsCounter } from "./hooks/useOptionsCounter";
 import dataCards from "./data/dataCards.json";
 import { Card } from "./components/Card";
 // import { useNavigation } from "./hooks/useNavigation";
@@ -9,9 +10,25 @@ const WEB_SERVICE_ID = 3;
 const App = (): JSX.Element => {
 	const servicesList: ItemCard[] = dataCards;
 
+	const {
+		value: webPages,
+		increment: incrementPages,
+		decrement: decrementPages,
+		canIncrement: canIncrementPages,
+		canDecrement: canDecrementPages,
+	} = useOptionsCounter({ initialValue: 1, minimumValue: 1 });
+
+	const {
+		value: webLanguages,
+		increment: incrementLanguages,
+		decrement: decrementLanguages,
+		canIncrement: canIncrementLanguages,
+		canDecrement: canDecrementLanguages,
+	} = useOptionsCounter({ initialValue: 1, minimumValue: 1 });
+
 	const [selectedServices, setSelectedServices] = useState<number[]>([]);
-	const [webPages, setWebPages] = useState<number>(1);
-	const [webLanguages, setWebLanguages] = useState<number>(1);
+	// const [webPages, setWebPages] = useState<number>(1);
+	// const [webLanguages, setWebLanguages] = useState<number>(1);
 
 	const toggleServices = (serviceId: number, isChecked: boolean) => {
 		setSelectedServices((seleccionats) => {
@@ -50,10 +67,12 @@ const App = (): JSX.Element => {
 							onToggle: toggleServices,
 						}}
 						webOptionsProps={{
-							pages: webPages,
-							languages: webLanguages,
-							onChangePages: setWebPages,
-							onChangeLanguages: setWebLanguages,
+							webPages: webPages,
+							webLanguages: webLanguages,
+							onIncrementPages: incrementPages,
+							onDecrementPages: decrementPages,
+							onIncrementLanguages: incrementLanguages,
+							onDecrementLanguages: decrementLanguages,
 						}}
 					/>
 				))}

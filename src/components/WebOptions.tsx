@@ -1,35 +1,73 @@
-import type { CardProps, WebOptionsProps } from "../types/types";
+import type { WebOptionsProps } from "../types/types";
 
 export const WebOptions = ({
-	pages,
-	languages,
-	onChangePages,
-	onChangeLanguages,
+	webPages,
+	webLanguages,
+	onIncrementPages,
+	onDecrementPages,
+	onIncrementLanguages,
+	onDecrementLanguages,
 }: WebOptionsProps): JSX.Element => {
+	const isPagesDecrementDisabled = webPages <= 1;
+	const isLanguagesDecrementDisabled = webLanguages <= 1;
+
 	return (
 		<div className="web-options">
-			<label>
-				Nombre de pàgines:
+			<div className="web-options__control">
+				<span className="web-options__label">Nombre de pàgines:</span>
+				<button
+					type="button"
+					onClick={onDecrementPages}
+					disabled={isPagesDecrementDisabled}
+					aria-label="Treure una pàgina"
+				>
+					–
+				</button>
 				<input
+					id="pages-input"
+					className="web-options__value"
 					type="number"
+					value={webPages}
 					min={1}
-					value={pages}
-					onChange={(event) => {
-						onChangePages?.(Number(event.target.value));
-					}}
+					// readOnly
+					aria-label={`${webPages} pàgines seleccionades`}
 				/>
-			</label>
-			<label>
-				Nombre d’idiomes:
+				<button
+					type="button"
+					onClick={onIncrementPages}
+					aria-label="Afegir una pàgina"
+				>
+					+
+				</button>
+			</div>
+
+			<div className="web-options__control">
+				<span className="web-options__label">Nombre d'idiomes:</span>
+				<button
+					type="button"
+					onClick={onDecrementLanguages}
+					disabled={isLanguagesDecrementDisabled}
+					aria-label="Treure un idioma"
+				>
+					–
+				</button>
 				<input
+					id="languages-input"
+					className="web-options__value"
 					type="number"
+					value={webLanguages}
 					min={1}
-					value={languages}
-					onChange={(event) => {
-						onChangeLanguages?.(Number(event.target.value));
-					}}
+					// readOnly
+					aria-label={`${webLanguages} idiomes seleccionats`}
 				/>
-			</label>
+				<button
+					type="button"
+					onClick={onIncrementLanguages}
+					aria-label="Afegir un idioma"
+				>
+					+
+				</button>
+			</div>
 		</div>
 	);
 };

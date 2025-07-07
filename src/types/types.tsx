@@ -5,16 +5,32 @@ export type ItemCard = {
 	price: number;
 };
 
-export type WebOptionsProps = {
-	pages: number;
-	languages: number;
-	onChangePages: (newPages: number) => void;
-	onChangeLanguages: (newLanguages: number) => void;
-};
-
 export type NavigationControls = {
 	checked: boolean;
 	onToggle: (id: number, checked: boolean) => void;
+};
+
+export type WebOptionsProps = {
+	webPages: number;
+	webLanguages: number;
+	onIncrementPages: () => void;
+	onDecrementPages: () => void;
+	onIncrementLanguages: () => void;
+	onDecrementLanguages: () => void;
+};
+
+export type UseCounterOptions = {
+	initialValue: number;
+	minimumValue: number;
+	maximumValue?: number;
+};
+
+export type UseCounterResult = {
+	value: number;
+	increment: () => void;
+	decrement: () => void;
+	canIncrement: boolean;
+	canDecrement: boolean;
 };
 
 export type CardProps = {
