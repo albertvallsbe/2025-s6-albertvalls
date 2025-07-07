@@ -5,6 +5,13 @@ export type ItemCard = {
 	price: number;
 };
 
+export type WebOptionsProps = {
+	pages: number;
+	languages: number;
+	onChangePages: (newPages: number) => void;
+	onChangeLanguages: (newLanguages: number) => void;
+};
+
 export type NavigationControls = {
 	checked: boolean;
 	onToggle: (id: number, checked: boolean) => void;
@@ -13,8 +20,5 @@ export type NavigationControls = {
 export type CardProps = {
 	card: ItemCard;
 	controls?: NavigationControls;
-};
-
-export type ImageProps = {
-	refreshKey: number;
+	webOptionsProps?: WebOptionsProps;
 };

@@ -1,13 +1,27 @@
 import type { CardProps } from "../types/types";
+import { WebOptions } from "./WebOptions";
 
-export const Card = ({ card, controls }: CardProps): JSX.Element => {
+export const Card = ({
+	card,
+	controls,
+	webOptionsProps,
+}: CardProps): JSX.Element => {
 	const { checked = false, onToggle = () => {} } = controls ?? {};
+
+	const {
+		pages = 1,
+		languages = 1,
+		onChangePages,
+		onChangeLanguages,
+	} = webOptionsProps ?? {};
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		onToggle(card.id, event.target.checked);
 		console.log("card: ", card.id);
 		console.log("check: ", event.target.checked);
 	};
+
+	const isWebCard = card.id === 3;
 
 	return (
 		<article key={card.id} className={`card`}>
@@ -29,6 +43,14 @@ export const Card = ({ card, controls }: CardProps): JSX.Element => {
 					<p className="card__text">Afegir</p>
 				</div>
 			</div>
+			{isWebCard && onChangePages && onChangeLanguages && (
+				<WebOptions
+					pages={pages}
+					languages={languages}
+					onChangePages={onChangePages}
+					onChangeLanguages={onChangeLanguages}
+				/>
+			)}
 		</article>
 	);
 };

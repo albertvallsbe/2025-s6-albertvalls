@@ -25,6 +25,7 @@ body {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 	grid-template-rows: 1fr;
+	gap: 5rem;
 }
 
 .card__item {
@@ -37,6 +38,7 @@ body {
 	grid-template-columns: repeat(2, auto);
 	gap: 1rem;
 	align-items: center;
+
 }
 
 
@@ -60,10 +62,13 @@ body {
 }
 
 .total__budget {
+	width: 22rem;
+	margin: 2rem auto;
 	font-size: 2rem;
 	color: #555;
 	text-align: end;
-	margin-right: 8rem;
+	// margin-right: 8rem;
+	padding: 1rem;
 }
 
 input[type="checkbox"] {
