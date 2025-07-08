@@ -25,6 +25,7 @@ body {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 	grid-template-rows: 1fr;
+	gap: 5rem;
 }
 
 .card__item {
@@ -37,6 +38,7 @@ body {
 	grid-template-columns: repeat(2, auto);
 	gap: 1rem;
 	align-items: center;
+
 }
 
 
@@ -60,10 +62,13 @@ body {
 }
 
 .total__budget {
+	width: 25rem;
+	margin: 2rem auto;
 	font-size: 2rem;
 	color: #555;
 	text-align: end;
-	margin-right: 8rem;
+	// margin-right: 8rem;
+	padding: 1rem;
 }
 
 input[type="checkbox"] {
@@ -71,6 +76,86 @@ input[type="checkbox"] {
 	height: 1rem;
 	accent-color: colors.$primary-color;
 	cursor: pointer;
+}
+
+input[type="number"] {
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	& {
+		-moz-appearance: textfield;
+	}
+}
+
+.web-options {
+
+
+	padding: 1.5rem 2rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	justify-items: end;
+}
+
+.web-options__control {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+/* Etiqueta a l’esquerra */
+.web-options__label {
+	flex: 0 0 auto;
+	font-size: 0.875rem;
+	color: #555;
+}
+
+/* Botons + i – */
+.web-options__control button {
+	background: transparent;
+	border: 1px solid colors.$primary-color;
+	border-radius: 0.25rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+	transition: background 0.2s, transform 0.1s;
+}
+
+.web-options__control button:disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+
+.web-options__control button:hover:not(:disabled) {
+	background: colors.$primary-color;
+	color: colors.$white;
+}
+
+/* Input numèric al mig */
+.web-options__control input[type="number"] {
+	width: 3ch;
+	padding: 0.25rem;
+	text-align: center;
+	font-size: 1rem;
+	border: 1px solid color.scale(colors.$primary-color, $alpha: -80%);
+	border-radius: 0.375rem;
+}
+
+/* Ocultar spinners */
+.web-options__control input[type="number"]::-webkit-outer-spin-button,
+.web-options__control input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.web-options__control input[type="number"] {
+	-moz-appearance: textfield;
 }
 
 @media (min-width: 768px) {
@@ -91,5 +176,15 @@ input[type="checkbox"] {
 		padding: 1rem;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(2, auto);
+	}
+
+	.web-options {
+		/* en escriptori, dues columnes */
+		// grid-template-columns: repeat(2, 1fr);
+		// grid-column: 2 / 3;
+		// min-width: 100%;
+		grid-column: span 2;
+		// padding-left: 1.5rem;
+		// align-items: end;
 	}
 }

@@ -10,11 +10,31 @@ export type NavigationControls = {
 	onToggle: (id: number, checked: boolean) => void;
 };
 
+export type WebOptionsProps = {
+	webPagesCounter: UseCounterResult;
+	webLanguagesCounter: UseCounterResult;
+	// onIncrementPages: () => void;
+	// onDecrementPages: () => void;
+	// onIncrementLanguages: () => void;
+	// onDecrementLanguages: () => void;
+};
+
+export type UseCounterOptions = {
+	initialValue: number;
+	minimumValue: number;
+	maximumValue?: number;
+};
+
+export type UseCounterResult = {
+	value: number;
+	increment: () => void;
+	decrement: () => void;
+	canIncrement: boolean;
+	canDecrement: boolean;
+};
+
 export type CardProps = {
 	card: ItemCard;
 	controls?: NavigationControls;
-};
-
-export type ImageProps = {
-	refreshKey: number;
+	webOptionsProps?: WebOptionsProps;
 };
