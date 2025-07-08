@@ -11,12 +11,12 @@ export type NavigationControls = {
 };
 
 export type WebOptionsProps = {
-	webPages: number;
-	webLanguages: number;
-	onIncrementPages: () => void;
-	onDecrementPages: () => void;
-	onIncrementLanguages: () => void;
-	onDecrementLanguages: () => void;
+	webPagesCounter: UseCounterResult;
+	webLanguagesCounter: UseCounterResult;
+	// onIncrementPages: () => void;
+	// onDecrementPages: () => void;
+	// onIncrementLanguages: () => void;
+	// onDecrementLanguages: () => void;
 };
 
 export type UseCounterOptions = {

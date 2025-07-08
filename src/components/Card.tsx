@@ -14,14 +14,14 @@ export const Card = ({
 
 	const isWebCard = card.id === 3;
 
-	const {
-		webPages = 1,
-		webLanguages = 1,
-		onIncrementPages = () => {},
-		onDecrementPages = () => {},
-		onIncrementLanguages = () => {},
-		onDecrementLanguages = () => {},
-	} = webOptionsProps ?? {};
+	// const {
+	// 	webPages = 1,
+	// 	webLanguages = 1,
+	// 	onIncrementPages = () => {},
+	// 	onDecrementPages = () => {},
+	// 	onIncrementLanguages = () => {},
+	// 	onDecrementLanguages = () => {},
+	// } = webOptionsProps ?? {};
 
 	return (
 		<article className={`card`}>
@@ -43,7 +43,7 @@ export const Card = ({
 					<p className="card__text">Afegir</p>
 				</div>
 			</div>
-			{isWebCard && (
+			{/* {isWebCard && (
 				<WebOptions
 					webPages={webPages}
 					webLanguages={webLanguages}
@@ -52,7 +52,8 @@ export const Card = ({
 					onIncrementLanguages={onIncrementLanguages}
 					onDecrementLanguages={onDecrementLanguages}
 				/>
-			)}
+			)} */}
+			{isWebCard && webOptionsProps && <WebOptions {...webOptionsProps} />}
 		</article>
 	);
 };
