@@ -52,9 +52,14 @@ const BudgetSummary = (): JSX.Element => {
 		webLanguagesCounter.value,
 	]);
 
+	console.log(`totalBudget: ${totalBudget}`);
+	console.log(`toggleServices: ${toggleServices}`);
+	console.log(`servicesList: ${servicesList}`);
+	console.log(`selectedServices: ${selectedServices}`);
+	// selectedServices;
 	return (
 		<>
-			<div>
+			<article>
 				{servicesList.map((service) => (
 					<Card
 						key={service.id}
@@ -74,7 +79,7 @@ const BudgetSummary = (): JSX.Element => {
 				<div className="total__budget">
 					<span>Pressupost total: {totalBudget}€</span>
 				</div>
-			</div>
+			</article>
 		</>
 	);
 };
