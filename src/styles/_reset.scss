@@ -53,3 +53,13 @@ h4 {
 p {
 	margin-bottom: 1rem;
 }
+
+.web-options__control input[type="number"]::-webkit-outer-spin-button,
+.web-options__control input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.web-options__control input[type="number"] {
+	-moz-appearance: textfield;
+}

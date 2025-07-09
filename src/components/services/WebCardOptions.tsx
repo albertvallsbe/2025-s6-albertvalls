@@ -42,6 +42,7 @@ export const WebCardOptions = ({
 			<div className="web-options__control">
 				<span className="web-options__label">Nombre de pàgines:</span>
 				<button
+					className="button__icon"
 					type="button"
 					onClick={decrementPages}
 					disabled={!canDecrementPages}
@@ -59,6 +60,7 @@ export const WebCardOptions = ({
 					aria-label={`${pages} pàgines seleccionades`}
 				/>
 				<button
+					className="button__icon"
 					type="button"
 					onClick={incrementPages}
 					disabled={!canIncrementPages}
@@ -71,6 +73,7 @@ export const WebCardOptions = ({
 			<div className="web-options__control">
 				<span className="web-options__label">Nombre d'idiomes:</span>
 				<button
+					className="button__icon"
 					type="button"
 					onClick={decrementLanguages}
 					disabled={!canDecrementLanguages}
@@ -88,6 +91,7 @@ export const WebCardOptions = ({
 					aria-label={`${languages} idiomes seleccionats`}
 				/>
 				<button
+					className="button__icon"
 					type="button"
 					onClick={incrementLanguages}
 					disabled={!canIncrementLanguages}

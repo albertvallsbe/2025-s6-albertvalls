@@ -11,7 +11,7 @@ export const WelcomePage = (): JSX.Element => (
 			</div>
 		</article>
 		<Link to="/budget">
-			<button className="welcome-card__button">Entrar a la calculadora</button>
+			<button className="button__text">Entrar a la calculadora</button>
 		</Link>
 	</>
 );

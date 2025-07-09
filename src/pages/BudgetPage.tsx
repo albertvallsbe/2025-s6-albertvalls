@@ -5,7 +5,7 @@ import BudgetForm from "../components/budget/BudgetForm";
 export const BudgetPage = (): JSX.Element => (
 	<div>
 		<Link to="/">
-			<button className="welcome-card__button">Tornar a benvinguda</button>
+			<button className="button__text">Tornar a benvinguda</button>
 		</Link>
 		<BudgetSummary />
 		<BudgetForm />

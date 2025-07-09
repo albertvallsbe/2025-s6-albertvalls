@@ -24,7 +24,7 @@ export const BudgetForm = (): JSX.Element => {
 				/>
 			</div>
 
-			<button type="submit" className="budget-form__button">
+			<button type="submit" className="button__text">
 				Sol·licitar pressupost →
 			</button>
 		</form>

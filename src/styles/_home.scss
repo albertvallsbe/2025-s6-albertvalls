@@ -33,31 +33,13 @@ body {
 	padding: 1rem;
 }
 
+
 .card__toggle {
 	padding: 1rem;
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 	gap: 1rem;
 	align-items: center;
-}
-
-.card__title {
-	font-size: 1.25rem;
-	margin: 0;
-	color: #333;
-}
-
-.card__price {
-	font-size: 1.25rem;
-	margin: 0;
-	text-align: end;
-	color: #333;
-}
-
-.card__text {
-	font-size: 1rem;
-	color: #555;
-	margin: 0;
 }
 
 .total__budget {
@@ -110,64 +92,13 @@ input[type="number"] {
 	color: #555;
 }
 
-
-.web-options__control button {
-	background: transparent;
-	border: 1px solid colors.$primary-color;
-	border-radius: variables.$border-radius;
-	width: 1.5rem;
-	height: 1.5rem;
-	display: grid;
-	place-items: center;
-	cursor: pointer;
-	transition: background 0.2s, transform 0.1s;
-}
-
-.web-options__control button:disabled {
-	opacity: 0.4;
-	cursor: not-allowed;
-}
-
-.web-options__control button:hover:not(:disabled) {
-	background: colors.$primary-color;
-	color: colors.$white;
-}
-
 .web-options__control input[type="number"] {
-	width: 3ch;
+	width: 5ch;
 	padding: 0.25rem;
 	text-align: center;
 	font-size: 1rem;
 	border: 1px solid color.scale(colors.$primary-color, $alpha: -80%);
 	border-radius: variables.$border-radius;
-}
-
-.web-options__control input[type="number"]::-webkit-outer-spin-button,
-.web-options__control input[type="number"]::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
-}
-
-.web-options__control input[type="number"] {
-	-moz-appearance: textfield;
-}
-
-.welcome-card__button {
-	padding: 0.75rem 1.5rem;
-	background: colors.$primary-color;
-	color: colors.$white;
-	border: none;
-	border-radius: variables.$border-radius;
-	font-size: 1rem;
-	cursor: pointer;
-	transition: background 0.2s ease;
-	display: grid;
-	grid-template-columns: 1fr;
-	margin: 2rem auto;
-}
-
-.welcome-card__button:hover {
-	background: color.scale(colors.$primary-color, $lightness: -10%);
 }
 
 @media screen and (min-width: variables.$breakpoint-medium) {
