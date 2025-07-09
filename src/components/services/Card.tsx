@@ -17,12 +17,12 @@ export const Card = ({
 	return (
 		<article className={`card`}>
 			<div className="card__item">
-				<h2 className="card__title">{card.title}</h2>
-				<p className="card__text">{card.description}</p>
+				<h2 className="heading">{card.title}</h2>
+				<p className="text__body">{card.description}</p>
 			</div>
 			<div className="card__section">
 				<div className="card__item">
-					<p className="card__price">{card.price}€</p>
+					<p className="heading__medium">{card.price}€</p>
 				</div>
 				<div className="card__toggle">
 					<input
@@ -31,7 +31,7 @@ export const Card = ({
 						onChange={handleChange}
 						aria-label={`Afegir ${card.title}`}
 					/>
-					<p className="card__text">Afegir</p>
+					<p className="text">Afegir</p>
 				</div>
 			</div>
 
