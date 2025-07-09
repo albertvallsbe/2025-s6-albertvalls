@@ -1,5 +1,5 @@
-import type { CardProps } from "../types/types";
-import { WebOptions } from "./WebOptions";
+import type { CardProps } from "../../types/types";
+import { WebCardOptions } from "./WebCardOptions";
 
 export const Card = ({
 	card,
@@ -13,15 +13,6 @@ export const Card = ({
 	};
 
 	const isWebCard = card.id === 3;
-
-	// const {
-	// 	webPages = 1,
-	// 	webLanguages = 1,
-	// 	onIncrementPages = () => {},
-	// 	onDecrementPages = () => {},
-	// 	onIncrementLanguages = () => {},
-	// 	onDecrementLanguages = () => {},
-	// } = webOptionsProps ?? {};
 
 	return (
 		<article className={`card`}>
@@ -43,17 +34,8 @@ export const Card = ({
 					<p className="card__text">Afegir</p>
 				</div>
 			</div>
-			{/* {isWebCard && (
-				<WebOptions
-					webPages={webPages}
-					webLanguages={webLanguages}
-					onIncrementPages={onIncrementPages}
-					onDecrementPages={onDecrementPages}
-					onIncrementLanguages={onIncrementLanguages}
-					onDecrementLanguages={onDecrementLanguages}
-				/>
-			)} */}
-			{isWebCard && webOptionsProps && <WebOptions {...webOptionsProps} />}
+
+			{isWebCard && webOptionsProps && <WebCardOptions {...webOptionsProps} />}
 		</article>
 	);
 };

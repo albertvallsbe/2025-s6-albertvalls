@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 
-export const Welcome = (): JSX.Element => (
+export const WelcomePage = (): JSX.Element => (
 	<>
 		<article className="card welcome-card">
-			{/* Cos principal, reutilitza .card__item per a text */}
 			<div className="card__item">
 				<h1 className="card__title">Benvingut/da!</h1>
 				<p className="card__text">
@@ -11,7 +10,7 @@ export const Welcome = (): JSX.Element => (
 				</p>
 			</div>
 		</article>
-		<Link to="/calculator">
+		<Link to="/budget">
 			<button className="welcome-card__button">Entrar a la calculadora</button>
 		</Link>
 	</>

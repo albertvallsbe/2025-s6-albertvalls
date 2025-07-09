@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import App from "../App";
+import BudgetSummary from "../components/budget/BudgetSummary";
 
-export const Calculator = (): JSX.Element => (
+export const BudgetPage = (): JSX.Element => (
 	<div>
 		<Link to="/">
 			<button className="welcome-card__button">Tornar a benvinguda</button>
 		</Link>
-		<App />
+		<BudgetSummary />
 	</div>
 );

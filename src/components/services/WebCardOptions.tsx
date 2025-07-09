@@ -1,15 +1,9 @@
-import type { WebOptionsProps } from "../types/types";
+import type { WebOptionsProps } from "../../types/types";
 
-// onIncrementPages,
-// onDecrementPages,
-// onIncrementLanguages,
-// onDecrementLanguages,
-export const WebOptions = ({
+export const WebCardOptions = ({
 	webPagesCounter,
 	webLanguagesCounter,
 }: WebOptionsProps): JSX.Element => {
-	// const isPagesDecrementDisabled = webPages <= 1;
-	// const isLanguagesDecrementDisabled = webLanguages <= 1;
 	const {
 		value: pages,
 		increment: incrementPages,
@@ -28,10 +22,9 @@ export const WebOptions = ({
 
 	const handlePagesChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const raw = Number(event.target.value);
-		// clamp mínim
+
 		if (!isNaN(raw)) {
 			if (raw < 1) return decrementPages();
-			// no hi ha màxim implícit; podríem comprovar canIncrement
 		}
 	};
 
@@ -89,7 +82,6 @@ export const WebOptions = ({
 					id="languages-input"
 					className="web-options__value"
 					type="number"
-					// readOnly
 					value={languages}
 					onChange={handleLanguagesChange}
 					min={1}

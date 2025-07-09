@@ -1,30 +1,13 @@
 import { useState, useMemo } from "react";
-import type { ItemCard } from "./types/types";
-import dataCards from "./data/dataCards.json";
-import { Card } from "./components/Card";
-import { useOptionsCounter } from "./hooks/useOptionsCounter";
-// import { useNavigation } from "./hooks/useNavigation";
+import type { ItemCard } from "../../types/types";
+import { Card } from "../services/Card";
+import { useOptionsCounter } from "../../hooks/useOptionsCounter";
+import dataCards from "../../data/dataCards.json";
 
 const WEB_SERVICE_ID = 3;
 
-const App = (): JSX.Element => {
+const BudgetSummary = (): JSX.Element => {
 	const servicesList: ItemCard[] = dataCards;
-
-	// const {
-	// 	value: webPages,
-	// 	increment: incrementPages,
-	// 	decrement: decrementPages,
-	// 	canIncrement: canIncrementPages,
-	// 	canDecrement: canDecrementPages,
-	// } = useOptionsCounter({ initialValue: 1, minimumValue: 1 });
-
-	// const {
-	// 	value: webLanguages,
-	// 	increment: incrementLanguages,
-	// 	decrement: decrementLanguages,
-	// 	canIncrement: canIncrementLanguages,
-	// 	canDecrement: canDecrementLanguages,
-	// } = useOptionsCounter({ initialValue: 1, minimumValue: 1 });
 
 	const webPagesCounter = useOptionsCounter({
 		initialValue: 1,
@@ -36,8 +19,6 @@ const App = (): JSX.Element => {
 	});
 
 	const [selectedServices, setSelectedServices] = useState<number[]>([]);
-	// const [webPages, setWebPages] = useState<number>(1);
-	// const [webLanguages, setWebLanguages] = useState<number>(1);
 
 	const toggleServices = (serviceId: number, isChecked: boolean) => {
 		setSelectedServices((seleccionats) => {
@@ -87,15 +68,6 @@ const App = (): JSX.Element => {
 								? { webPagesCounter, webLanguagesCounter }
 								: undefined
 						}
-
-						// webOptionsProps={{
-						// 	webPages: webPages,
-						// 	webLanguages: webLanguages,
-						// 	onIncrementPages: incrementPages,
-						// 	onDecrementPages: decrementPages,
-						// 	onIncrementLanguages: incrementLanguages,
-						// 	onDecrementLanguages: decrementLanguages,
-						// }}
 					/>
 				))}
 
@@ -107,4 +79,4 @@ const App = (): JSX.Element => {
 	);
 };
 
-export default App;
+export default BudgetSummary;
