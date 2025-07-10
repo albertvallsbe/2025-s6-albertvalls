@@ -13,10 +13,6 @@ export type NavigationControls = {
 export type WebOptionsProps = {
 	webPagesCounter: UseCounterResult;
 	webLanguagesCounter: UseCounterResult;
-	// onIncrementPages: () => void;
-	// onDecrementPages: () => void;
-	// onIncrementLanguages: () => void;
-	// onDecrementLanguages: () => void;
 };
 
 export type UseCounterOptions = {
@@ -37,4 +33,23 @@ export type CardProps = {
 	card: ItemCard;
 	controls?: NavigationControls;
 	webOptionsProps?: WebOptionsProps;
+};
+
+export type BudgetServiceItem = {
+	id: string;
+	name: string;
+	price: number;
+};
+
+export type Budget = {
+	id: string;
+	clientName: string;
+	clientMail: string;
+	clientPhone: string;
+	selectedServices: BudgetServiceItem[];
+	pages?: number;
+	languages?: number;
+	total: number;
+	totalItems: number;
+	date: string; // guardem com a ISO string
 };

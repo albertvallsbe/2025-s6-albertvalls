@@ -1,15 +1,9 @@
-import type { WebOptionsProps } from "../types/types";
+import type { WebOptionsProps } from "../../types/types";
 
-// onIncrementPages,
-// onDecrementPages,
-// onIncrementLanguages,
-// onDecrementLanguages,
-export const WebOptions = ({
+export const WebCardOptions = ({
 	webPagesCounter,
 	webLanguagesCounter,
 }: WebOptionsProps): JSX.Element => {
-	// const isPagesDecrementDisabled = webPages <= 1;
-	// const isLanguagesDecrementDisabled = webLanguages <= 1;
 	const {
 		value: pages,
 		increment: incrementPages,
@@ -28,10 +22,9 @@ export const WebOptions = ({
 
 	const handlePagesChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const raw = Number(event.target.value);
-		// clamp mínim
+
 		if (!isNaN(raw)) {
 			if (raw < 1) return decrementPages();
-			// no hi ha màxim implícit; podríem comprovar canIncrement
 		}
 	};
 
@@ -49,6 +42,7 @@ export const WebOptions = ({
 			<div className="web-options__control">
 				<span className="web-options__label">Nombre de pàgines:</span>
 				<button
+					className="button__icon"
 					type="button"
 					onClick={decrementPages}
 					disabled={!canDecrementPages}
@@ -66,6 +60,7 @@ export const WebOptions = ({
 					aria-label={`${pages} pàgines seleccionades`}
 				/>
 				<button
+					className="button__icon"
 					type="button"
 					onClick={incrementPages}
 					disabled={!canIncrementPages}
@@ -78,6 +73,7 @@ export const WebOptions = ({
 			<div className="web-options__control">
 				<span className="web-options__label">Nombre d'idiomes:</span>
 				<button
+					className="button__icon"
 					type="button"
 					onClick={decrementLanguages}
 					disabled={!canDecrementLanguages}
@@ -89,13 +85,13 @@ export const WebOptions = ({
 					id="languages-input"
 					className="web-options__value"
 					type="number"
-					// readOnly
 					value={languages}
 					onChange={handleLanguagesChange}
 					min={1}
 					aria-label={`${languages} idiomes seleccionats`}
 				/>
 				<button
+					className="button__icon"
 					type="button"
 					onClick={incrementLanguages}
 					disabled={!canIncrementLanguages}
