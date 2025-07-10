@@ -15,7 +15,7 @@ export const Card = ({
 	const isWebCard = card.id === 3;
 
 	return (
-		<article className={`card`}>
+		<article className="card">
 			<div className="card__item">
 				<h2 className="heading">{card.title}</h2>
 				<p className="text__body">{card.description}</p>

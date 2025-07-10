@@ -1,33 +1,36 @@
 export const BudgetForm = (): JSX.Element => {
 	return (
-		<form className="budget-form">
-			<h2 className="budget-form__title">Demanar pressupost</h2>
+		<article className="card">
+			<form className="budget-form">
+				<div className="card__item">
+					<h2 className="heading">Demanar pressupost</h2>
+				</div>
+				<div className="card__item">
+					<span className="text__body">Nom:</span>
+					<input type="text" className="budget-form__input" placeholder="Nom" />
+				</div>
+				<div className="card__item">
+					<span className="text__body">Telèfon:</span>
+					<input
+						type="tel"
+						className="budget-form__input"
+						placeholder="Telèfon"
+					/>
+				</div>
+				<div className="card__item">
+					<span className="text__body">Email:</span>
+					<input
+						type="email"
+						className="budget-form__input"
+						placeholder="Email"
+					/>
+				</div>
 
-			<div className="budget-form__fields">
-				<span className="web-options__label">Nom:</span>
-				<input type="text" className="budget-form__input" placeholder="Nom" />
-			</div>
-			<div className="budget-form__fields">
-				<span className="web-options__label">Telèfon:</span>
-				<input
-					type="tel"
-					className="budget-form__input"
-					placeholder="Telèfon"
-				/>
-			</div>
-			<div className="budget-form__fields">
-				<span className="web-options__label">Email:</span>
-				<input
-					type="email"
-					className="budget-form__input"
-					placeholder="Email"
-				/>
-			</div>
-
-			<button type="submit" className="button__text">
-				Sol·licitar pressupost →
-			</button>
-		</form>
+				<button type="submit" className="button__text">
+					Sol·licitar pressupost →
+				</button>
+			</form>
+		</article>
 	);
 };
 
