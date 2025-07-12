@@ -1,13 +1,51 @@
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import BudgetSummary from "../components/budget/BudgetSummary";
+import {
+	BudgetSummary,
+	type BudgetSummaryHandle,
+} from "../components/budget/BudgetSummary";
 import BudgetForm from "../components/budget/BudgetForm";
+import type { Budget, SummaryData } from "../types/types";
 
-export const BudgetPage = (): JSX.Element => (
-	<div>
-		<Link to="/">
-			<button className="button__text">Tornar a benvinguda</button>
-		</Link>
-		<BudgetSummary />
-		<BudgetForm />
-	</div>
-);
+export const BudgetPage = (): JSX.Element => {
+	const summaryRef = useRef<BudgetSummaryHandle>(null);
+	const [budgets, setBudgets] = useState<Budget[]>([]);
+
+	const handleAddBudget = (formData: {
+		clientName: string;
+		clientMail: string;
+		clientPhone: string;
+	}) => {
+		const summaryData: SummaryData | undefined =
+			summaryRef.current?.getSummaryData();
+		if (!summaryData) return;
+
+		const now = new Date().toISOString();
+		const newBudget: Budget = {
+			id: crypto.randomUUID(),
+			clientName: formData.clientName,
+			clientMail: formData.clientMail,
+			clientPhone: formData.clientPhone,
+			selectedServices: summaryData.selectedServices,
+			pages: summaryData.pages,
+			languages: summaryData.languages,
+			total: summaryData.total,
+			totalItems: summaryData.totalItems,
+			date: now,
+		};
+
+		setBudgets((current) => [...current, newBudget]);
+		console.log("New budget: ", newBudget);
+	};
+	console.log("Budgets: ", budgets);
+
+	return (
+		<div>
+			<Link to="/">
+				<button className="button__text">Tornar a benvinguda</button>
+			</Link>
+			<BudgetSummary ref={summaryRef} />
+			<BudgetForm onAddBudget={handleAddBudget} />
+		</div>
+	);
+};
