@@ -1,4 +1,7 @@
+import { useState } from "react";
 import type { WebOptionsProps } from "../../types/types";
+import { InLineHelpModal } from "../modals/InLineHelpModal";
+import { PortalHelpModal } from "../modals/PortalHelpModal";
 
 export const WebCardOptions = ({
 	webPagesCounter,
@@ -37,9 +40,22 @@ export const WebCardOptions = ({
 		}
 	};
 
+	const [showInlineHelp, setShowInlineHelp] = useState(false);
+	const [showPortalHelp, setShowPortalHelp] = useState(false);
+	const handlePagesHelp = () => setShowInlineHelp(true);
+	const handleCloseHelp = () => setShowInlineHelp(false);
+
 	return (
 		<div className="web-options">
 			<div className="web-options__control">
+				<button
+					type="button"
+					className="web-options__info"
+					onClick={handlePagesHelp}
+					aria-label="Ajuda Nombre de pàgines"
+				>
+					ℹ️
+				</button>
 				<span className="web-options__label">Nombre de pàgines:</span>
 				<button
 					className="button__icon"
@@ -71,6 +87,14 @@ export const WebCardOptions = ({
 			</div>
 
 			<div className="web-options__control">
+				<button
+					type="button"
+					onClick={() => setShowPortalHelp(true)}
+					className="web-options__info"
+					aria-label="Ajuda Nombre de pàgines"
+				>
+					ℹ️
+				</button>
 				<span className="web-options__label">Nombre d'idiomes:</span>
 				<button
 					className="button__icon"
@@ -100,6 +124,22 @@ export const WebCardOptions = ({
 					+
 				</button>
 			</div>
+
+			{showInlineHelp && (
+				<InLineHelpModal
+					title="Nombre de pàgines"
+					message="Indica quantes pàgines vols incloure al teu projecte. El cost s'actualitzarà automàticament."
+					onClose={handleCloseHelp}
+				/>
+			)}
+
+			{showPortalHelp && (
+				<PortalHelpModal
+					title="Nombre d'idiomes"
+					message="Indica en quants idiomes estarà disponible les pàgines que incloguis al teu projecte. El cost s'actualitzarà automàticament."
+					onClose={() => setShowPortalHelp(false)}
+				></PortalHelpModal>
+			)}
 		</div>
 	);
 };
