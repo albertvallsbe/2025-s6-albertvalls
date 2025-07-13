@@ -29,10 +29,32 @@ body {
 	gap: 5rem;
 }
 
-.card__item {
+.card__box {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr;
+	gap: variables.$size-medium;
 	padding: 1rem;
 }
 
+.card__list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, auto);
+	gap: variables.$size-medium;
+	padding: 1rem;
+}
+
+.card__list__item {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: variables.$size-medium;
+	padding: 1rem;
+}
+
+.card__item {
+	padding: 1rem;
+}
 
 .card__toggle {
 	padding: 1rem;
@@ -101,6 +123,16 @@ input[type="number"] {
 	border-radius: variables.$border-radius;
 }
 
+.list__header {
+	width: 22rem;
+	margin: 2rem auto;
+}
+
+.list__container {
+	margin-bottom: 2rem;
+	padding-bottom: 3rem;
+}
+
 @media screen and (min-width: variables.$breakpoint-medium) {
 	.card {
 		width: 35rem;
@@ -115,6 +147,14 @@ input[type="number"] {
 		grid-template-columns: repeat(2, auto);
 	}
 
+	.card__list {
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		grid-template-rows: 1fr;
+		gap: variables.$size-medium;
+		padding: 1rem;
+	}
+
 	.card__item {
 		padding: 1rem;
 		grid-template-columns: 1fr;
@@ -123,5 +163,9 @@ input[type="number"] {
 
 	.web-options {
 		grid-column: span 2;
+	}
+
+	.list__header {
+		width: 35rem;
 	}
 }

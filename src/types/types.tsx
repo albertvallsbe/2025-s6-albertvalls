@@ -41,6 +41,22 @@ export type BudgetServiceItem = {
 	price: number;
 };
 
+export type SummaryData = {
+	selectedServices: BudgetServiceItem[];
+	pages: number;
+	languages: number;
+	total: number;
+	totalItems: number;
+};
+
+export type BudgetFormProps = {
+	onAddBudget: (data: {
+		clientName: string;
+		clientMail: string;
+		clientPhone: string;
+	}) => void;
+};
+
 export type Budget = {
 	id: string;
 	clientName: string;
@@ -51,5 +67,5 @@ export type Budget = {
 	languages?: number;
 	total: number;
 	totalItems: number;
-	date: string; // guardem com a ISO string
+	date: string;
 };
