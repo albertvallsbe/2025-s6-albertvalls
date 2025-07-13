@@ -5,6 +5,7 @@ import {
 	type BudgetSummaryHandle,
 } from "../components/budget/BudgetSummary";
 import BudgetForm from "../components/budget/BudgetForm";
+import BudgetList from "../components/budget/BudgetList";
 import type { Budget, SummaryData } from "../types/types";
 
 export const BudgetPage = (): JSX.Element => {
@@ -46,6 +47,7 @@ export const BudgetPage = (): JSX.Element => {
 			</Link>
 			<BudgetSummary ref={summaryRef} />
 			<BudgetForm onAddBudget={handleAddBudget} />
+			<BudgetList budgets={budgets} />
 		</div>
 	);
 };

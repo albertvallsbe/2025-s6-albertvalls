@@ -24,8 +24,8 @@ export const BudgetForm = ({ onAddBudget }: BudgetFormProps): JSX.Element => {
 				<div className="card__item">
 					<h2 className="heading">Demanar pressupost</h2>
 				</div>
-				<div className="card__item">
-					<span className="text__body">Nom:</span>
+				<div className="card__box">
+					<span className="text text__right">Nom:</span>
 					<input
 						id="client-name"
 						type="text"
@@ -36,8 +36,8 @@ export const BudgetForm = ({ onAddBudget }: BudgetFormProps): JSX.Element => {
 						required
 					/>
 				</div>
-				<div className="card__item">
-					<span className="text__body">Telèfon:</span>
+				<div className="card__box">
+					<span className="text text__right">Telèfon:</span>
 					<input
 						id="client-phone"
 						type="tel"
@@ -48,8 +48,8 @@ export const BudgetForm = ({ onAddBudget }: BudgetFormProps): JSX.Element => {
 						required
 					/>
 				</div>
-				<div className="card__item">
-					<span className="text__body">Email:</span>
+				<div className="card__box">
+					<span className="text text__right">Email:</span>
 					<input
 						id="client-mail"
 						type="email"
