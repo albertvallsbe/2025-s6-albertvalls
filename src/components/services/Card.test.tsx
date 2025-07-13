@@ -4,34 +4,29 @@ import type { NavigationControls, ItemCard } from '../../types/types';
 
 describe('Card component on initial step', () => {
 	const stepData: ItemCard = {
-		title: 'Pas de prova',
+		id: 1,
+		title: 'Servei de prova',
 		description: 'Descripció de prova',
+		price: 100,
 	};
 
 	const controls: NavigationControls = {
-		stepIndex: 0,
-		currentStep: stepData,
-		totalSteps: 3,
-		isFirst: true,
-		isLast: false,
-		next: jest.fn(),
-		prev: jest.fn(),
-		goTo: jest.fn(),
-		direction: 'next',
+		checked: false,
+		onToggle: jest.fn(),
 	};
-
 	test('renders title, description, only the next button, and calls next()', () => {
 		render(<Card card={stepData} controls={controls} />);
 
-		expect(screen.getByText('Pas de prova')).toBeInTheDocument();
+		expect(screen.getByText('Servei de prova')).toBeInTheDocument();
 		expect(screen.getByText('Descripció de prova')).toBeInTheDocument();
+		expect(screen.getByText('100€')).toBeInTheDocument();
 
-		expect(screen.queryByText('←')).toBeNull();
+		const checkbox = screen.getByRole('checkbox', {
+			name: /Afegir Servei de prova/i,
+		});
+		expect(checkbox).not.toBeChecked();
 
-		const nextBtn = screen.getByText('→');
-		expect(nextBtn).toBeInTheDocument();
-
-		fireEvent.click(nextBtn);
-		expect(controls.next).toHaveBeenCalledTimes(1);
+		fireEvent.click(checkbox);
+		expect(controls.onToggle).toHaveBeenCalledWith(1, true);
 	});
 });
