@@ -7,10 +7,11 @@ import {
 import BudgetForm from "../components/budget/BudgetForm";
 import BudgetList from "../components/budget/BudgetList";
 import type { Budget, SummaryData } from "../types/types";
+import dataBudgets from "../data/dataBudgets.json";
 
 export const BudgetPage = (): JSX.Element => {
 	const summaryRef = useRef<BudgetSummaryHandle>(null);
-	const [budgets, setBudgets] = useState<Budget[]>([]);
+	const [budgets, setBudgets] = useState<Budget[]>(dataBudgets);
 
 	const handleAddBudget = (formData: {
 		clientName: string;
