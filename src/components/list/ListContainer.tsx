@@ -1,10 +1,7 @@
 import ListControls from "./ListControls";
 import ListItems from "./ListItems";
 import type { Budget } from "../../types/types";
-import {
-	useSortableFilterableList,
-	type SortMode,
-} from "../../hooks/useListItems";
+import { useSortableFilterableList } from "../../hooks/useListItems";
 
 export type ListContainerProps = {
 	budgets: Budget[];
