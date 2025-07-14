@@ -41,3 +41,27 @@
 	background: colors.$primary-color;
 	color: colors.$white;
 }
+
+
+.list-controls__button {
+	display: inline-grid;
+	place-items: center;
+	width: 2.75rem;
+	height: 2.5rem;
+	border: 1px solid colors.$primary-color;
+	border-radius: variables.$border-radius;
+	background: transparent;
+	color: colors.$text-gray;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+
+	&:hover {
+		background: colors.$primary-color;
+		color: colors.$white;
+	}
+
+	&:disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
+	}
+}
