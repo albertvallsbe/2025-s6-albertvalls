@@ -5,7 +5,8 @@ import {
 	type BudgetSummaryHandle,
 } from "../components/budget/BudgetSummary";
 import BudgetForm from "../components/budget/BudgetForm";
-import BudgetList from "../components/budget/BudgetList";
+// import BudgetList from "../components/list/BudgetList";
+import ListContainer from "../components/list/ListContainer";
 import type { Budget, SummaryData } from "../types/types";
 import dataBudgets from "../data/dataBudgets.json";
 
@@ -22,7 +23,12 @@ export const BudgetPage = (): JSX.Element => {
 			summaryRef.current?.getSummaryData();
 		if (!summaryData) return;
 
-		const now = new Date().toISOString();
+		const now = new Date().toLocaleDateString("ca-ES", {
+			year: "numeric",
+			month: "2-digit",
+			day: "2-digit",
+		});
+
 		const newBudget: Budget = {
 			id: crypto.randomUUID(),
 			clientName: formData.clientName,
@@ -48,7 +54,8 @@ export const BudgetPage = (): JSX.Element => {
 			</Link>
 			<BudgetSummary ref={summaryRef} />
 			<BudgetForm onAddBudget={handleAddBudget} />
-			<BudgetList budgets={budgets} />
+			{/* <BudgetList budgets={budgets} /> */}
+			<ListContainer budgets={budgets} />
 		</div>
 	);
 };

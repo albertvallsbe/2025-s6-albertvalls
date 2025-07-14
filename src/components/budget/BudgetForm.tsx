@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useState, useRef, useEffect, type FormEvent } from "react";
 import type { BudgetFormProps } from "../../types/types";
 
 export const BudgetForm = ({ onAddBudget }: BudgetFormProps): JSX.Element => {
@@ -6,8 +6,24 @@ export const BudgetForm = ({ onAddBudget }: BudgetFormProps): JSX.Element => {
 	const [clientPhone, setClientPhone] = useState<string>("");
 	const [clientMail, setClientMail] = useState<string>("");
 
+	const formRef = useRef<HTMLFormElement>(null);
+	const [isFormValid, setFormValid] = useState(false);
+
+	useEffect(() => {
+		const form = formRef.current;
+		if (!form) return;
+		setFormValid(form.checkValidity());
+	}, [clientName, clientPhone, clientMail]);
+
 	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
+
+		const formElement = formRef.current;
+		if (!formElement || !formElement.checkValidity()) {
+			formElement?.reportValidity();
+			return;
+		}
+
 		onAddBudget({
 			clientName: clientName.trim(),
 			clientMail: clientMail.trim(),
@@ -20,7 +36,12 @@ export const BudgetForm = ({ onAddBudget }: BudgetFormProps): JSX.Element => {
 
 	return (
 		<article className="card">
-			<form className="budget-form" onSubmit={handleSubmit} noValidate>
+			<form
+				className="budget-form"
+				onSubmit={handleSubmit}
+				noValidate
+				ref={formRef}
+			>
 				<div className="card__item">
 					<h2 className="heading">Demanar pressupost</h2>
 				</div>
@@ -44,6 +65,7 @@ export const BudgetForm = ({ onAddBudget }: BudgetFormProps): JSX.Element => {
 						className="budget-form__input"
 						placeholder="Telèfon"
 						value={clientPhone}
+						pattern="^[0-9]{9}$"
 						onChange={(event) => setClientPhone(event.currentTarget.value)}
 						required
 					/>
@@ -61,7 +83,7 @@ export const BudgetForm = ({ onAddBudget }: BudgetFormProps): JSX.Element => {
 					/>
 				</div>
 
-				<button type="submit" className="button__text">
+				<button type="submit" className="button__text" disabled={!isFormValid}>
 					Sol·licitar pressupost →
 				</button>
 			</form>

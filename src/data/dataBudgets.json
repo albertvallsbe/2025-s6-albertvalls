@@ -1,15 +1,5 @@
 [
     {
-        "id": "a1b2c3d4",
-        "clientName": "Anna López",
-        "clientMail": "anna.lopez@example.com",
-        "clientPhone": "600123456",
-        "selectedServices": [{ "id": "1", "name": "SEO", "price": 300 }],
-        "total": 300,
-        "totalItems": 1,
-        "date": "2025-06-15T09:30:00.000Z"
-    },
-    {
         "id": "e5f6g7h8",
         "clientName": "Carles Puig",
         "clientMail": "carles.puig@example.com",
@@ -20,34 +10,17 @@
         ],
         "total": 700,
         "totalItems": 2,
-        "date": "2025-06-20T14:45:00.000Z"
+        "date": "13/07/2025"
     },
     {
-        "id": "i9j0k1l2",
-        "clientName": "Mariona Serra",
-        "clientMail": "mariona.serra@example.com",
-        "clientPhone": "622345678",
-        "selectedServices": [{ "id": "3", "name": "Web", "price": 500 }],
-        "pages": 3,
-        "languages": 2,
-        "total": 650,
+        "id": "a1b2c3d4",
+        "clientName": "Anna López",
+        "clientMail": "anna.lopez@example.com",
+        "clientPhone": "600123456",
+        "selectedServices": [{ "id": "1", "name": "SEO", "price": 300 }],
+        "total": 300,
         "totalItems": 1,
-        "date": "2025-06-25T11:15:00.000Z"
-    },
-    {
-        "id": "m3n4o5p6",
-        "clientName": "Jordi Martí",
-        "clientMail": "jordi.marti@example.com",
-        "clientPhone": "633456789",
-        "selectedServices": [
-            { "id": "1", "name": "SEO", "price": 300 },
-            { "id": "3", "name": "Web", "price": 500 }
-        ],
-        "pages": 5,
-        "languages": 1,
-        "total": 980,
-        "totalItems": 2,
-        "date": "2025-07-01T16:00:00.000Z"
+        "date": "11/07/2025"
     },
     {
         "id": "q7r8s9t0",
@@ -62,6 +35,33 @@
         "languages": 3,
         "total": 1050,
         "totalItems": 2,
-        "date": "2025-07-05T10:20:00.000Z"
+        "date": "10/07/2025"
+    },
+    {
+        "id": "i9j0k1l2",
+        "clientName": "Mariona Serra",
+        "clientMail": "mariona.serra@example.com",
+        "clientPhone": "622345678",
+        "selectedServices": [{ "id": "3", "name": "Web", "price": 500 }],
+        "pages": 3,
+        "languages": 2,
+        "total": 650,
+        "totalItems": 1,
+        "date": "09/07/2025"
+    },
+    {
+        "id": "m3n4o5p6",
+        "clientName": "Jordi Martí",
+        "clientMail": "jordi.marti@example.com",
+        "clientPhone": "633456789",
+        "selectedServices": [
+            { "id": "1", "name": "SEO", "price": 300 },
+            { "id": "3", "name": "Web", "price": 500 }
+        ],
+        "pages": 5,
+        "languages": 1,
+        "total": 980,
+        "totalItems": 2,
+        "date": "01/07/2025"
     }
 ]
