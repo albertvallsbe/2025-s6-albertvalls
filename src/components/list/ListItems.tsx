@@ -10,12 +10,11 @@ export type BudgetListProps = {
 
 export const ListItems: React.FC<BudgetListProps> = ({ budgets }) => {
 	// const [showPortalHelp, setShowPortalHelp] = useState(false);
-	const [showPortalHelp, setShowPortalHelp] = useState<string | null>(null);
+	const [showShareUrl, setShowShareUrl] = useState<string | null>(null);
 
 	return (
 		<>
 			{budgets.map((budget) => {
-				// 1) Construeix aquí mateix el BudgetParams per a aquest budget
 				const params: BudgetParams = {
 					seo: budget.selectedServices.some((service) => service.id === "1"),
 					ads: budget.selectedServices.some((service) => service.id === "2"),
@@ -24,8 +23,6 @@ export const ListItems: React.FC<BudgetListProps> = ({ budgets }) => {
 					lang: budget.languages ?? 1,
 				};
 
-				console.log("aquiii", params.pages, budget.clientName);
-				// 2) Genera la query-string només amb buildBudgetQuery
 				const queryString = buildBudgetQuery(params);
 				const shareUrl =
 					window.location.origin + window.location.pathname + "?" + queryString;
@@ -63,7 +60,7 @@ export const ListItems: React.FC<BudgetListProps> = ({ budgets }) => {
 											className="button__icon card__share-button"
 											aria-label="Compartir pressupost"
 											onClick={() => {
-												setShowPortalHelp(budget.id);
+												setShowShareUrl(budget.id);
 											}}
 										>
 											📋
@@ -72,11 +69,11 @@ export const ListItems: React.FC<BudgetListProps> = ({ budgets }) => {
 								</div>
 							</article>
 						</div>
-						{showPortalHelp === budget.id && (
+						{showShareUrl === budget.id && (
 							<ShareUrlModal
 								title={`Hola, ${budget.clientName}`}
 								message={shareUrl}
-								onClose={() => setShowPortalHelp(null)}
+								onClose={() => setShowShareUrl(null)}
 							></ShareUrlModal>
 						)}
 					</article>

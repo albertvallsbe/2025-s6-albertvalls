@@ -7,7 +7,7 @@ type PortalHelpModalProps = {
 	onClose: () => void;
 };
 
-export const PortalHelpModal = ({
+export const OptionsHelpModal = ({
 	title = "Ajuda",
 	message,
 	onClose,

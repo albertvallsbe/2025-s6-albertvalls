@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { WebOptionsProps } from "../../types/types";
 import { InLineHelpModal } from "../modals/InLineHelpModal";
-import { PortalHelpModal } from "../modals/PortalHelpModal";
+import { OptionsHelpModal } from "../modals/OptionsHelpModal";
 
 export const WebCardOptions = ({
 	webPagesCounter,
@@ -134,11 +134,11 @@ export const WebCardOptions = ({
 			)}
 
 			{showPortalHelp && (
-				<PortalHelpModal
+				<OptionsHelpModal
 					title="Nombre d'idiomes"
 					message="Indica en quants idiomes estarà disponible les pàgines que incloguis al teu projecte. El cost s'actualitzarà automàticament."
 					onClose={() => setShowPortalHelp(false)}
-				></PortalHelpModal>
+				></OptionsHelpModal>
 			)}
 		</div>
 	);
