@@ -29,11 +29,20 @@ export type BudgetSummaryHandle = {
 export const BudgetSummary = forwardRef<BudgetSummaryHandle>(
 	(_, ref): JSX.Element => {
 		const servicesList: ItemCard[] = dataCards;
-		const [selectedServices, setSelectedServices] = useState<number[]>([]);
-		// const [selectedServices, setSelectedServices] = useState<number[]>(…inicial segons initialParams…)
 
 		const [searchParams, setSearchParams] = useSearchParams();
 		const initialParams = parseBudgetQuery(searchParams.toString());
+
+		// const [selectedServices, setSelectedServices] = useState<number[]>([]);
+		const [selectedServices, setSelectedServices] = useState<number[]>(() => {
+			const ids: number[] = [];
+			if (initialParams.seo) ids.push(1);
+			if (initialParams.ads) ids.push(2);
+			if (initialParams.web) ids.push(3);
+			console.log(ids);
+			return ids;
+		});
+		// const [selectedServices, setSelectedServices] = useState<number[]>(…inicial segons initialParams…)
 
 		const webPagesCounter = useOptionsCounter({
 			initialValue: initialParams.pages,

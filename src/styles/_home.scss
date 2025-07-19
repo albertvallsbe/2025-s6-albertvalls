@@ -11,7 +11,7 @@ body {
 
 .card {
 	width: 22rem;
-	margin: 2rem auto;
+	margin: 1rem auto;
 	border: 0.5px solid colors.$primary-color;
 	border-radius: variables.$border-radius;
 	box-shadow: variables.$shadow-light;
@@ -124,25 +124,25 @@ input[type="number"] {
 }
 
 .list__container {
-	margin: 0 auto;
-	// padding: variables.$size-medium;
+	margin: 1 auto;
+	padding: variables.$size-medium;
 	// width: 22rem;
 }
 
 .list__header {
 	width: 22rem;
-	margin: 2rem auto;
+	margin: 1rem auto;
 }
 
 
 .list__box {
 	width: 22rem;
-	margin: 2rem auto;
+	margin: 1rem auto;
 }
 
 .list-controls {
 	display: grid;
-	margin: 2rem auto;
+	margin: 1rem auto;
 	width: 22rem;
 	grid-auto-flow: column;
 	justify-content: end;
