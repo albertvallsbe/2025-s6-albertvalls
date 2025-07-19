@@ -124,9 +124,9 @@ input[type="number"] {
 }
 
 .list__container {
-	margin: 1 auto;
-	padding: variables.$size-medium;
-	// width: 22rem;
+	width: 22rem;
+	margin: variables.$size-small auto;
+
 }
 
 .list__header {
@@ -137,7 +137,7 @@ input[type="number"] {
 
 .list__box {
 	width: 22rem;
-	margin: 1rem auto;
+	margin: variables.$size-small auto;
 }
 
 .list-controls {
@@ -180,7 +180,7 @@ input[type="number"] {
 		display: grid;
 		grid-template-columns: 1fr 2fr 1fr;
 		grid-template-rows: 1fr;
-		gap: variables.$size-medium;
+		gap: variables.$size-small;
 		padding: 1rem;
 	}
 
@@ -194,16 +194,18 @@ input[type="number"] {
 		grid-column: span 2;
 	}
 
-	.list__header {
+	.list__container {
 		width: 35rem;
+		margin: variables.$size-small auto;
 	}
 
-	.list__container {
+	.list__header {
 		width: 35rem;
 	}
 
 	.list__box {
 		width: 35rem;
+		margin: variables.$size-small auto;
 	}
 
 	.list-controls {
