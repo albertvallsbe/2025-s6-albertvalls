@@ -1,17 +1,17 @@
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
-type PortalHelpModalProps = {
+type OptionsHelpModalProps = {
 	title?: string;
 	message: string;
 	onClose: () => void;
 };
 
-export const PortalHelpModal = ({
+export const OptionsHelpModal = ({
 	title = "Ajuda",
 	message,
 	onClose,
-}: PortalHelpModalProps): JSX.Element | null => {
+}: OptionsHelpModalProps): JSX.Element | null => {
 	const overlayRef = useRef<HTMLDivElement>(null);
 	const modalRef = useRef<HTMLDivElement>(null);
 	const previouslyFocused = useRef<HTMLElement | null>(null);

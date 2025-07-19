@@ -1,10 +1,22 @@
-import { forwardRef, useImperativeHandle, useState, useMemo } from "react";
+import {
+	forwardRef,
+	useImperativeHandle,
+	useState,
+	useMemo,
+	useEffect,
+} from "react";
 import type {
 	ItemCard,
 	BudgetServiceItem,
 	SummaryData,
 } from "../../types/types";
 import { Card } from "../services/Card";
+import { useSearchParams } from "react-router-dom";
+import {
+	buildBudgetQuery,
+	parseBudgetQuery,
+	type BudgetParams,
+} from "../../utils/urlUtils";
 import { useOptionsCounter } from "../../hooks/useOptionsCounter";
 import dataCards from "../../data/dataCards.json";
 
@@ -17,14 +29,29 @@ export type BudgetSummaryHandle = {
 export const BudgetSummary = forwardRef<BudgetSummaryHandle>(
 	(_, ref): JSX.Element => {
 		const servicesList: ItemCard[] = dataCards;
-		const [selectedServices, setSelectedServices] = useState<number[]>([]);
+
+		const [searchParams, setSearchParams] = useSearchParams();
+		const initialParams = parseBudgetQuery(searchParams.toString());
+
+		// const [selectedServices, setSelectedServices] = useState<number[]>([]);
+		const [selectedServices, setSelectedServices] = useState<number[]>(() => {
+			const ids: number[] = [];
+			if (initialParams.seo) ids.push(1);
+			if (initialParams.ads) ids.push(2);
+			if (initialParams.web) ids.push(3);
+			console.log(ids);
+			return ids;
+		});
+		// const [selectedServices, setSelectedServices] = useState<number[]>(…inicial segons initialParams…)
 
 		const webPagesCounter = useOptionsCounter({
-			initialValue: 1,
+			initialValue: initialParams.pages,
+			// initialValue: 1,
 			minimumValue: 1,
 		});
 		const webLanguagesCounter = useOptionsCounter({
-			initialValue: 1,
+			initialValue: initialParams.lang,
+			// initialValue: 1,
 			minimumValue: 1,
 		});
 
@@ -73,6 +100,17 @@ export const BudgetSummary = forwardRef<BudgetSummaryHandle>(
 		const totalItems = useMemo<number>(() => {
 			return selectedServices.length;
 		}, [serviceItems]);
+
+		useEffect(() => {
+			const params: BudgetParams = {
+				seo: selectedServices.includes(1),
+				ads: selectedServices.includes(2),
+				web: selectedServices.includes(3),
+				pages: webPagesCounter.value,
+				lang: webLanguagesCounter.value,
+			};
+			setSearchParams(buildBudgetQuery(params));
+		}, [selectedServices, webPagesCounter.value, webLanguagesCounter.value]);
 
 		useImperativeHandle(ref, () => ({
 			getSummaryData: () => ({

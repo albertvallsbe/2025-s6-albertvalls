@@ -1,4 +1,4 @@
-# 🎓 2025-S5 Pràctica Acadèmica / 2025-S5 Academic Practice
+# 🎓 2025-S6 Pràctica Acadèmica / 2025-S6 Academic Practice
 
 Albert Valls
 
@@ -17,34 +17,28 @@ Albert Valls
 ## 1. Sobre el projecte / About
 
 **CAT:**  
-Aquest projecte és una aplicació escrita en React amb TypeScript i configurada amb Vite. L’objectiu principal és crear un component Card que permeti canviar entre diverses targetes mitjançant injecció de contingut per props, així com implementar una navegació ordenada entre les cards.
+ChatGPT said:
 
-En una primera versió es va crear un component addicional anomenat Indicador, tal com sol·licitava l’exercici 5. Després de veure que l’ús de més de sis props entre components dificulta el manteniment, ja que augmenta la complexitat i el risc d’errors de sincronització de dades, vam decidir centralitzar la lògica de navegació en un hook personalitzat. Tot i això, hem mantingut una branca específica amb el component Indicador per complir amb el requisit : pots visitar la branca "feature/indicator" per veure el codi.
+Aquest projecte consisteix en una aplicació web interactiva, desenvolupada amb React i TypeScript sobre Vite, que facilita el càlcul i la gestió de pressupostos per a serveis de màrqueting i desenvolupament web. A la pantalla principal, l’usuari /ària tria entre tres opcions: campanya SEO (300 €), campanya de publicitat Ads (400 €) o pàgina web (500 €). Si selecciona la pàgina web, apareix un component addicional per ajustar el nombre de pàgines i d’idiomes, amb un cost extra de 30 € per unitat, calculat automàticament com (pàgines + idiomes) × 30 €.
 
-Com a extra, hem afegit una crida a l’API externa RandomFox per obtenir fotografies aleatòries, la qual cosa ens ha servit per practicar la creació de nous components i l’ús d’APIs externes.
+Un cop configurades les opcions, l’usuari /ària pot omplir un formulari amb les dades del client/a (nom, telèfon i email) i afegir tants pressupostos com vulgui, cadascun amb el seu cost total i detall de serveis. La llista de pressupostos es mostra en cartes reutilitzables on es pot ordenar per data, import o alfabèticament, i filtrar mitjançant un cercador de noms. A més, cada pressupost disposa d’un botó per compartir-ne l’enllaç: la URL es construeix en temps real per reflectir exactament les opcions triades, i es presenta en un modal accessible que permet copiar-la fàcilment.
 
-A més, hem incorporat transicions entre diapositives usant SASS i aplicant classes CSS mitjançant la lògica de TypeScript.
-
-També hem implementat tests amb Jest per comprovar el correcte funcionament d’algunes funcionalitats clau, com la navegació entre cards i la injecció de props.
+S’ha treballat amb una estructura modular de components, hooks personalitzats per al comptador d’opcions i lògica de construcció de query-strings, estils SCSS amb variables globals i BEM, i routing amb React Router per navegar entre la pantalla de benvinguda i la calculadora. Aquesta organització garanteix mantenibilitat, reutilització i escalabilitat del codi, així com una experiència d’usuari clara i accessible.
 
 **EN:**  
-This project is built with React and TypeScript, scaffolded using Vite. The main goal is to develop a Card component that can display multiple cards by injecting content via props, and to implement an ordered navigation between these cards.
+This project is an interactive web application built with React and TypeScript on top of Vite, designed to streamline the calculation and management of budgets for marketing and web‐development services. On the main screen, users can choose between three options: an SEO campaign (€300), an Ads campaign (€400), or a website (€500). If the website option is selected, an additional component appears allowing the user to specify the number of pages and languages, with an extra cost of €30 per unit, automatically calculated as (pages + languages) × €30.
 
-In the initial version, we created an additional Indicator component as required by exercise 5. However, we found that passing more than six props between components hampers maintainability, increases complexity, and raises the risk of data synchronization errors. To address this, we refactored the navigation logic into a custom hook. We still maintain a dedicated branch "feature/indicator" containing the original Indicator component implementation to satisfy the exercise requirement.
+After configuring their choices, users can fill out a form with client information (name, phone, email) and add as many budgets as they wish, each displaying its total cost and service breakdown. The budget list is presented in reusable cards that can be sorted by date, amount, or alphabetically, and filtered via a name search. Furthermore, each budget card includes a button to share its link: the URL is generated in real time to match the selected options and is displayed in an accessible modal for easy copying.
 
-As an extra feature, we integrated the RandomFox external API to fetch random images, providing additional practice in creating new components and consuming external APIs.
-
-We also added slide transitions using SASS, and dynamically applied CSS classes through TypeScript logic.
-
-In addition, we implemented Jest tests to verify the correct behavior of key functionalities, such as card navigation and props injection.
+We implemented a modular component architecture, custom hooks for option counters and query-string generation, SCSS styling with global variables and BEM conventions, and React Router for navigation between the welcome screen and the calculator. This structure ensures code maintainability, reusability, and scalability, as well as a clear and accessible user experience.
 
 ## 2. Funcionalitats / Features
 
 - ✅ **React**
 - ✅ **TypeScript → JavaScript**
 - ✅ **Vite**
-- ✅ **External API integration**
 - ✅ **SASS**
+- ✅ **Testing**
 
 ## 3. Tecnologia / Tech Stack
 
@@ -55,12 +49,12 @@ In addition, we implemented Jest tests to verify the correct behavior of key fun
 - **Jest**
 - **SASS**
 - **CSS**
+- **Jest**
 - **Git & GitHub**
-- **API REST**
 
 ## 4. Demo en línia / Live Demo
 
-**Live:** 👉 https://s5-albertvalls.netlify.app/
+**Live:** 👉 https://budgets-albertvalls.netlify.app/
 
 **CAT:**  
 Visita la demo en línia per veure l’aplicació en funcionament.
@@ -70,7 +64,7 @@ Check out the live demo to see the application in action.
 
 ## 5. Repositori / Repository
 
-**Github:** 👉 https://github.com/albertvallsbe/2025-s5-albertvalls
+**Github:** 👉 https://github.com/albertvallsbe/2025-s6-albertvalls
 
 ## 6. Estructura / Structure
 
@@ -140,7 +134,7 @@ _Segueix aquests passos per clonar el projecte i fer servir el compilador TypeSc
 
 **EN:**
 
-Follow these steps to clone the project, use the TypeScript compiler in “watch” mode, and run the styles with SASS also in “watch” mode.\_
+_Follow these steps to clone the project, use the TypeScript compiler in “watch” mode, and run the styles with SASS also in “watch” mode._
 
 **Requeriments / Prerequisites**
 
@@ -149,13 +143,13 @@ Follow these steps to clone the project, use the TypeScript compiler in “watch
 ### 1) Clonar el repositori / Clone the repository
 
 ```bash
-git clone https://github.com/albertvallsbe/2025-s5-albertvalls.git
+git clone https://github.com/albertvallsbe/2025-s6-albertvalls.git
 ```
 
 ### 2) Entrar al directori del projecte / Navigate into the project directory
 
 ```
-cd 2025-s5-albertvalls
+cd 2025-s6-albertvalls
 ```
 
 ### 3) Instal·lar dependències / Install dependencies
