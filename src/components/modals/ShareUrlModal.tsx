@@ -88,7 +88,7 @@ export const ShareUrlModal = ({
 						className="help-modal__textarea"
 						readOnly
 						value={message}
-						onFocus={(e) => e.currentTarget.select()}
+						onFocus={(event) => event.currentTarget.select()}
 						aria-label="Enllaç per compartir el pressupost"
 					/>
 				</div>

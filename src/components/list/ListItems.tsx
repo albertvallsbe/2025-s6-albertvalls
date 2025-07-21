@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import type { Budget } from "../../types/types";
 import { ShareUrlModal } from "../modals/ShareUrlModal";
 import { buildBudgetQuery, type BudgetParams } from "../../utils/urlUtils";
@@ -28,7 +27,7 @@ export const ListItems: React.FC<BudgetListProps> = ({ budgets }) => {
 					window.location.origin + window.location.pathname + "?" + queryString;
 
 				return (
-					<article className="list__box">
+					<article key={budget.id} className="list__box">
 						<div>
 							<article key={budget.id} className="card">
 								<div className="card__list">
