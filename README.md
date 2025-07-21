@@ -2,7 +2,10 @@
 
 Albert Valls
 
-![Imatge de la card](./src/assets/images/cardImage.png)
+![Imatge de la card](./src/assets/images/budget-welcome.png)
+![Imatge de la card](./src/assets/images/budget-summary.png)
+![Imatge de la card](./src/assets/images/budget-form.png)
+![Imatge de la card](./src/assets/images/budget-cards.png)
 
 ## 📚 Índex / Table of Contents
 
@@ -16,8 +19,7 @@ Albert Valls
 
 ## 1. Sobre el projecte / About
 
-**CAT:**  
-ChatGPT said:
+**CAT:**
 
 Aquest projecte consisteix en una aplicació web interactiva, desenvolupada amb React i TypeScript sobre Vite, que facilita el càlcul i la gestió de pressupostos per a serveis de màrqueting i desenvolupament web. A la pantalla principal, l’usuari /ària tria entre tres opcions: campanya SEO (300 €), campanya de publicitat Ads (400 €) o pàgina web (500 €). Si selecciona la pàgina web, apareix un component addicional per ajustar el nombre de pàgines i d’idiomes, amb un cost extra de 30 € per unitat, calculat automàticament com (pàgines + idiomes) × 30 €.
 
@@ -25,7 +27,8 @@ Un cop configurades les opcions, l’usuari /ària pot omplir un formulari amb l
 
 S’ha treballat amb una estructura modular de components, hooks personalitzats per al comptador d’opcions i lògica de construcció de query-strings, estils SCSS amb variables globals i BEM, i routing amb React Router per navegar entre la pantalla de benvinguda i la calculadora. Aquesta organització garanteix mantenibilitat, reutilització i escalabilitat del codi, així com una experiència d’usuari clara i accessible.
 
-**EN:**  
+**EN:**
+
 This project is an interactive web application built with React and TypeScript on top of Vite, designed to streamline the calculation and management of budgets for marketing and web‐development services. On the main screen, users can choose between three options: an SEO campaign (€300), an Ads campaign (€400), or a website (€500). If the website option is selected, an additional component appears allowing the user to specify the number of pages and languages, with an extra cost of €30 per unit, automatically calculated as (pages + languages) × €30.
 
 After configuring their choices, users can fill out a form with client information (name, phone, email) and add as many budgets as they wish, each displaying its total cost and service breakdown. The budget list is presented in reusable cards that can be sorted by date, amount, or alphabetically, and filtered via a name search. Furthermore, each budget card includes a button to share its link: the URL is generated in real time to match the selected options and is displayed in an accessible modal for easy copying.
@@ -76,9 +79,11 @@ The following image illustrates the main folder structure of the project:
 
 ![Project Structure](./src/assets/images/treeImage-1.png)
 ![Project Structure](./src/assets/images/treeImage-2.png)
+![Project Structure](./src/assets/images/treeImage-3.png)
+![Project Structure](./src/assets/images/treeImage-4.png)
 
 ```
-2025-s4-albertvalls/
+2025-s6-albertvalls/
 ├── node_modules/
 ├── public/
 │   ├── style.css
@@ -87,30 +92,52 @@ The following image illustrates the main folder structure of the project:
 ├── src/
 │   ├── assets/
 │   │   ├── images/
-│   │   │   ├── cardImage.png
-│   │   │   ├── treeImage_1.png
-│   │   │   └── treeImage_2.png
 │   │   └── react.svg
 │   ├── components/
-│   │   ├── Card.test.tsx
-│   │   ├── Card.tsx
-│   │   └── RandomImage.tsx
-│   ├── data/
+│   │   ├── budget/
+│   │   │   ├── BudgetForm.tsx
+│   │   │   └── BudgetSummary.tsx
+│   │   ├── list/
+│   │   │   ├── ListContainer.tsx
+│   │   │   ├── ListControls.tsx
+│   │   │   ├── ListItems.tsx
+│   │   │   └── listItems.test.tsx
+│   │   ├── modals/
+│   │   │   ├── InLineHelpModal.tsx
+│   │   │   ├── OptionsHelpModal.tsx
+│   │   │   └── ShareUrlModal.tsx
+│   │   └── services/
+│   │       ├── Card.tsx
+│   │       ├── WebCardOptions.tsx
+│   │       └── Card.test.tsx
+│   │── data/
+│   │   ├── dataBudgets.json
 │   │   └── dataCards.json
-│   ├── hooks/
-│   │   └── useNavigation.ts
-│   ├── styles/
+│   │── hooks/
+│   │   ├── useListItems.ts
+│   │   ├── useOptionsCounter.ts
+│   │   └── useOptionsCounter.test.ts
+│   │── pages/
+│   │   ├── BudgetPage.tsx
+│   │   └── WelcomePage.tsx
+│   │── styles/
+│   │   ├── _buttons.scss
 │   │   ├── _colors.scss
 │   │   ├── _home.scss
+│   │   ├── _modals.scss
 │   │   ├── _reset.scss
 │   │   ├── _typography.scss
+│   │   ├── _variables.scss
 │   │   └── main.scss
-│   ├── types/
+│   │── types/
 │   │   └── types.tsx
-│   ├── App.tsx
-│   ├── main.tsx
-│   ├── setupTests.ts
+│   │── utils/
+│   │   └── urlUtils.ts
+│   │── AppRoutes.tsx
+│   │── main.tsx
+│   │── setupTests.ts
 │   └── vite-env.d.ts
+├── .editorconfig
 ├── .gitignore
 ├── eslint.config.js
 ├── index.html
